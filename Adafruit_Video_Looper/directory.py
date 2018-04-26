@@ -39,7 +39,7 @@ class DirectoryReader(object):
             print ('It is a fifth Sunday')
             self._path = config.get('directory', 'path5')
         else:
-            print ('It is not a Sunday')
+            print ('Today is not a Sunday')
             self._path = config.get('directory', 'path0')
         return
 
