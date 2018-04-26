@@ -28,6 +28,11 @@ class DirectoryReader(object):
 
         if (DayofWeek == 'Sun'): ## if a Sunday
             print ('It is a Sunday')
+            return
+        
+        elif 
+            print ('It is not a Sunday')
+            return
 
     def search_paths(self):
         """Return a list of paths to search for files."""
