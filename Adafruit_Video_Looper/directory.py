@@ -10,7 +10,24 @@ class DirectoryReader(object):
         self._load_config(config)
 
     def _load_config(self, config):
-        self._path = config.get('directory', 'path0')
+        #self._path = config.get('directory', 'path0')
+        
+        import datetime
+
+        currentDT = datetime.datetime.now()
+        print (currentDT.strftime("%Y-%m-%d %H:%M:%S"))
+        print (currentDT.strftime("%Y/%m/%d"))
+        print (currentDT.strftime("%H:%M:%S"))
+        print (currentDT.strftime("%I:%M:%S %p"))
+        print (currentDT.strftime("%a, %b %d, %Y"))
+
+        DayofMonth = currentDT.day
+        print ('Day of Month is ', DayofMonth)
+        DayofWeek = currentDT.strftime('%a')
+        print ('Day of Week is ', DayofWeek)
+
+        if (DayofWeek == 'Sun'): ## if a Sunday
+            print ('It is a Sunday')
 
     def search_paths(self):
         """Return a list of paths to search for files."""
