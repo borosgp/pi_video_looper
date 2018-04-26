@@ -1,6 +1,8 @@
 # Copyright 2015 Adafruit Industries.
 # Author: Tony DiCola
 # License: GNU GPLv2, see LICENSE.txt
+import datetime
+
 class DirectoryReader(object):
 
     def __init__(self, config):
@@ -12,8 +14,6 @@ class DirectoryReader(object):
     def _load_config(self, config):
         #self._path = config.get('directory', 'path0')
         
-        import datetime
-
         currentDT = datetime.datetime.now()
         print (currentDT.strftime("%Y-%m-%d %H:%M:%S"))
         print (currentDT.strftime("%Y/%m/%d"))
@@ -26,11 +26,9 @@ class DirectoryReader(object):
         DayofWeek = currentDT.strftime('%a')
         print ('Day of Week is ', DayofWeek)
 
-        if (DayofWeek == 'Sun'): ## if a Sunday
-            print ('It is a Sunday')
-            if (DayofMonth > 0) and (DayofMonth < 8): ## 1st Sunday
-                print ('It is a first Sunday')
-                self._path = config.get('directory', 'path1')
+        if (DayofWeek == 'Sun') and (DayofMonth > 0) and (DayofMonth < 8): ## 1st Sunday
+            print ('It is a first Sunday')
+            self._path = config.get('directory', 'path1')
         else:
             print ('It is not a Sunday')
         return
