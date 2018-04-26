@@ -26,10 +26,21 @@ class DirectoryReader(object):
         if (DayofWeek == 'Sun') and (DayofMonth > 0) and (DayofMonth < 8):
             print ('It is a first Sunday')
             self._path = config.get('directory', 'path1')
+        elif (DayofWeek == 'Sun') and (DayofMonth > 7) and (DayofMonth < 15):
+            print ('It is a second Sunday')
+            self._path = config.get('directory', 'path2')
+        elif (DayofWeek == 'Sun') and (DayofMonth > 14) and (DayofMonth < 22):
+            print ('It is a third Sunday')
+            self._path = config.get('directory', 'path3')
+        elif (DayofWeek == 'Sun') and (DayofMonth > 21) and (DayofMonth < 29):
+            print ('It is a fourth Sunday')
+            self._path = config.get('directory', 'path4')
+        elif (DayofWeek == 'Sun') and (DayofMonth > 28) and (DayofMonth < 32):
+            print ('It is a fifth Sunday')
+            self._path = config.get('directory', 'path5')
         else:
             print ('It is not a Sunday')
             self._path = config.get('directory', 'path0')
-        print ('Done!')
         return
 
     def search_paths(self):
