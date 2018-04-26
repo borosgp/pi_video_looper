@@ -15,10 +15,7 @@ class DirectoryReader(object):
         #self._path = config.get('directory', 'path0')
         
         currentDT = datetime.datetime.now()
-        print (currentDT.strftime("%Y-%m-%d %H:%M:%S"))
-        print (currentDT.strftime("%Y/%m/%d"))
-        print (currentDT.strftime("%H:%M:%S"))
-        print (currentDT.strftime("%I:%M:%S %p"))
+        print (currentDT.strftime("%Y-%m-%d %H:%M:%S, %a"))
         print (currentDT.strftime("%a, %b %d, %Y"))
 
         DayofMonth = currentDT.day
@@ -26,11 +23,12 @@ class DirectoryReader(object):
         DayofWeek = currentDT.strftime('%a')
         print ('Day of Week is ', DayofWeek)
 
-        if (DayofWeek == 'Sun') and (DayofMonth > 0) and (DayofMonth < 8): ## 1st Sunday
+        if (DayofWeek == 'Sun') and (DayofMonth > 0) and (DayofMonth < 8):
             print ('It is a first Sunday')
             self._path = config.get('directory', 'path1')
         else:
             print ('It is not a Sunday')
+        print ('Done!')
         return
 
     def search_paths(self):
