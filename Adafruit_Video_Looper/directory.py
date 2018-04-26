@@ -28,6 +28,7 @@ class DirectoryReader(object):
             self._path = config.get('directory', 'path1')
         else:
             print ('It is not a Sunday')
+            self._path = config.get('directory', 'path0')
         print ('Done!')
         return
 
