@@ -147,7 +147,7 @@ class VideoLooper(object):
             font = self._small_font
         return font.render(message, True, self._fgcolor, self._bgcolor)
 
-    def _animate_countdown(self, playlist, seconds=10):
+    def _animate_countdown(self, playlist, seconds=1):
         """Print text with the number of loaded movies and a quick countdown
         message if the on screen display is enabled.
         """
