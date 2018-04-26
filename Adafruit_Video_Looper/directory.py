@@ -10,7 +10,7 @@ class DirectoryReader(object):
         self._load_config(config)
 
     def _load_config(self, config):
-        self._path = config.get('directory', 'path')
+        self._path = config.get('directory', 'path0')
 
     def search_paths(self):
         """Return a list of paths to search for files."""
