@@ -28,16 +28,11 @@ class DirectoryReader(object):
 
         if (DayofWeek == 'Sun'): ## if a Sunday
             print ('It is a Sunday')
-            
             if (DayofMonth > 0) and (DayofMonth < 8): ## 1st Sunday
                 print ('It is a first Sunday')
-                #read video_looper.ini path=/home/pi/Video_W1
                 self._path = config.get('directory', 'path1')
-                
         else:
             print ('It is not a Sunday')
-            return
-        
         return
 
     def search_paths(self):
